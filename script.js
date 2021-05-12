@@ -43,15 +43,16 @@ const insert = function (ch) {
 eq.onclick = function () {
   try {
     let str = screen.value;
-    str = str.replace("sin", "Math.sin");
-    str = str.replace("cos", "Math.cos");
-    str = str.replace("tan", "Math.tan");
-    str = str.replace("log", "Math.log10");
-    str = str.replace("ln", "Math.log");
-    str = str.replace("√", "Math.sqrt");
-    str = str.replace("^", "**");
-    str = str.replace("π", "Math.PI");
-    str = str.replace("x", "*");
+    str = str
+      .replaceAll("sin", "Math.sin")
+      .replaceAll("cos", "Math.cos")
+      .replaceAll("tan", "Math.tan")
+      .replaceAll("log", "Math.log10")
+      .replaceAll("ln", "Math.log")
+      .replaceAll("√", "Math.sqrt")
+      .replaceAll("^", "**")
+      .replaceAll("π", "Math.PI")
+      .replaceAll("x", "*");
     let res = Number(eval(str)).toFixed(2);
     if (res == "-0.00" || res == "0.00") {
       res = 0;
